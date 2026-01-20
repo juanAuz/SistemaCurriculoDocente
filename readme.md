@@ -44,3 +44,10 @@ mvn clean javafx:run *dentro de la carpeta donde clonaste el proyeecto
 3. ✅ Deberías ver ventana "JavaFX Funciona Correctamente"
 
 para las divisones de trabajo y el manejo de estilos revisar docs.md (resources/docs)
+### Estado Actual
+Unicamente estan creadas las carpetas mas generales y la app.j>
+### Próximos pasos
+- Descargar Scene Builder: https://gluonhq.com/products/scene->
+- El dia de mañana en la tarde crearé el resto de cosas y empe>
+
+Cualquier problema con el github o de cualquier tipo, por favo>
