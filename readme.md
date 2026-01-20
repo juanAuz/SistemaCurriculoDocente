@@ -32,13 +32,13 @@ src/main/resources/
 
 1. Clonar:
 ```bash
-git clone [URL] puedes encontrar la url en el boton de <>code
+git clone https://github.com/juanAuz/SistemaCurriculoDocente.git
 cd SistemaCurriculoDocente
 ```
 
-2. Ejecutar:
+2. Ejecutar en la carpeta raiz:
 ```bash
-mvn clean javafx:run *dentro de la carpeta donde clonaste el proyeecto
+mvn clean javafx:run 
 ```
 
 3. ✅ Deberías ver ventana "JavaFX Funciona Correctamente"
@@ -50,4 +50,4 @@ Unicamente estan creadas las carpetas mas generales y la app.j>
 - Descargar Scene Builder: https://gluonhq.com/products/scene->
 - El dia de mañana en la tarde crearé el resto de cosas y empe>
 
-Cualquier problema con el github o de cualquier tipo, por favo>
+Cualquier problema con el github o de cualquier tipo, por favor decirlo al whatsapp
