@@ -1,21 +1,142 @@
-Vamos a trabajar con FXML y Scene Builder porque ninguno domina JavaFX y es mucho más fácil de aprender - es visual, como arrastrar y soltar en PowerPoint. Lo primero que necesitamos es ponernos de acuerdo en cómo se va a ver todo para que no parezca que 4 personas diferentes hicieron el proyecto. Para eso vamos a crear un archivo CSS compartido (estilos.css) que tiene todos los colores, tamaños de letra y estilos de botones, y una plantilla FXML base (PlantillaFormulario.fxml) que todos van a copiar para hacer sus módulos. Así todo el sistema se ve consistente y profesional. También vamos a usar un patrón Singleton llamado SistemaDocente para que todos trabajemos sobre el mismo objeto Docente y no haya problemas de que cada quien tiene sus propias variables - todos accedemos al mismo lugar con SistemaDocente.getInstancia().getDocente().
-División de roles: Persona 1 (el organizador, yo) hace el módulo de Datos Personales + Títulos, crea toda la estructura inicial del proyecto (carpetas, archivos base, estilos CSS, plantilla FXML), sube todo al repositorio para que los demás lo descarguen, y va creando el diagrama UML conforme todos diseñamos las clases. Persona 2 hace el módulo de Experiencia Laboral completo (docente y no docente) y escribe el Manual Técnico donde explica la arquitectura del sistema, las clases principales y cómo funciona la persistencia. Persona 3 hace el módulo de Capacitación completo (recibida e impartida) y escribe el Manual de Usuario con screenshots mostrando cómo usar cada parte del sistema. Persona 4 hace el módulo de Investigaciones + Publicaciones y además se encarga de la integración final, es decir, crear la ventana principal con pestañas (TabPane) que junta todos los módulos, y también prepara la presentación Canva para la sustentación.
-Qué hace cada quien específicamente: Cada persona tiene que hacer 3 cosas - (1) crear las clases de modelo con herencia y polimorfismo según les toque (por ejemplo Persona 2 hace la clase abstracta Experiencia y sus dos hijos ExperienciaDocente y ExperienciaNoDocente), (2) crear la interfaz gráfica en Scene Builder con formularios y una tabla para mostrar los datos, y (3) implementar la persistencia para guardar y cargar sus datos en archivos. Adicionalmente cada quien tiene su tarea de documentación que ya mencioné. La carga está balanceada porque aunque Persona 4 tiene que hacer la integración final, sus clases de modelo son las más simples (solo Investigacion y Publicacion, sin herencia complicada), mientras que Persona 1 tiene menos código complejo porque está coordinando todo.
-Cómo evitamos que se vea desparejos: Todos usan Scene Builder para crear sus interfaces, todos copian la plantilla FXML que yo voy a crear, todos usan las mismas clases CSS del archivo estilos.css (por ejemplo cuando pongan un botón le asignan la clase "boton-primario" y automáticamente se ve igual a todos los botones del sistema), y nadie inventa estilos nuevos por su cuenta. Si alguien necesita un estilo que no existe, lo pide al grupo por chat y lo agregamos al archivo compartido para que todos lo usen. Para los formularios es lo mismo - la plantilla ya tiene la estructura básica (título, campos, botones de agregar/editar/eliminar, tabla) y cada quien solo agrega los campos específicos de su módulo pero respetando el diseño.
-Cómo evitamos problemas con las variables: Uso el Singleton SistemaDocente que voy a crear al inicio. Es una clase especial que garantiza que solo existe UN objeto Docente en todo el programa. Cuando Persona 1 guarda el nombre del docente hace SistemaDocente.getInstancia().getDocente().setNombre("Juan"), cuando Persona 2 agrega una experiencia hace SistemaDocente.getInstancia().getDocente().agregarExperiencia(exp), y así todos. Todos están trabajando sobre el mismo Docente, no hay duplicados ni conflictos. Para la persistencia cada quien guarda su parte en archivos separados - Persona 1 guarda titulos.dat, Persona 2 guarda experiencias.dat, etc. Cuando se inicia el programa cada módulo carga su archivo y mete los datos en el Docente compartido.
-Estructura de carpetas del proyecto: Voy a crear carpetas organizadas - modelo/ donde van todas las clases de datos (Persona, Docente, Formacion, Experiencia, etc.), vista/fxml/ donde cada quien pone su archivo FXML hecho en Scene Builder, vista/controlador/ donde van las clases Java que conectan los FXML con el modelo, persistencia/ donde cada quien pone su clase para guardar/cargar datos, y resources/ donde va el estilos.css compartido. Cada persona trabaja en su propia área sin pisar el código de los demás hasta el día de integración.
-Herramientas que vamos a usar: Git/GitHub para compartir código, Scene Builder para diseñar las interfaces y Lucidchart o draw.io para el diagrama UML. Todos deben tener Java 17 o superior y un IDE (IntelliJ IDEA o Eclipse o NetBeans, el que prefieran yo voy a usar vscode).
+### ¿Por qué FXML y Scene Builder?
 
-Sobre la documentación: No la dejamos para el final. Persona 1 (yo) voy dibujando el UML conforme diseñamos las clases Persona 2 va escribiendo el manual técnico mientras programa, en un Google Doc compartido. Persona 3 va tomando screenshots de su módulo funcionando y escribiendo el manual de usuario en otro Google Doc. Persona 4 va armando los slides de la presentación.
-## División de Trabajo
+Utilizamos FXML con Scene Builder porque facilita el desarrollo visual sin necesidad de dominar JavaFX a profundidad. Es tan intuitivo como arrastrar y soltar elementos en PowerPoint, lo que acelera el desarrollo y reduce la curva de aprendizaje.
 
-- **Persona 1**: Datos Personales + Títulos + UML
-- **Persona 2**: Experiencia Laboral + Manual Técnico
-- **Persona 3**: Capacitación + Manual de Usuario  
-- **Persona 4**: Investigación/Publicaciones + Integración + Presentación
+### Consistencia Visual
 
-## Reglas de Estilo
+Para garantizar que el proyecto no parezca obra de 4 personas diferentes:
 
-- Usar SOLO clases CSS de `estilos.css`
-- Copiar `PlantillaFormulario.fxml` para nuevos módulos
-- Acceder al Docente: `SistemaDocente.getInstancia().getDocente()`
+- **Archivo CSS compartido** (`estilos.css`): Define colores, tamaños de fuente y estilos de botones
+- **Plantilla FXML base** (`PlantillaFormulario.fxml`): Estructura base que todos copian para sus módulos(que aun no esta echo xdxdxd)
+
+### Patrón Singleton - SistemaDocente
+
+Implementamos un Singleton para evitar conflictos con variables duplicadas. Todos trabajan sobre el mismo objeto `Docente`:
+```java
+// Todos acceden al mismo lugar
+SistemaDocente.getInstancia().getDocente()
+```
+
+## 👥 División de Roles y Responsabilidades
+
+### Persona 1 (Coordinador)
+
+**Módulos**: Datos Personales + Títulos
+
+**Responsabilidades adicionales**:
+- Crear estructura inicial del proyecto (carpetas, archivos base)
+- Desarrollar `estilos.css` y `PlantillaFormulario.fxml`
+- Subir repositorio base
+- Crear y mantener diagrama UML conforme se diseñan las clases
+
+### Persona 2
+
+**Módulos**: Experiencia Laboral completa (docente y no docente)
+
+**Responsabilidades adicionales**:
+- Escribir Manual Técnico explicando:
+  - Arquitectura del sistema
+  - Clases principales
+  - Funcionamiento de la persistencia
+
+### Persona 3
+
+**Módulos**: Capacitación completa (recibida e impartida)
+
+**Responsabilidades adicionales**:
+- Escribir Manual de Usuario con:
+  - Screenshots de cada funcionalidad
+  - Guía paso a paso de uso del sistema
+
+### Persona 4
+
+**Módulos**: Investigaciones + Publicaciones
+
+**Responsabilidades adicionales**:
+- Integración final: crear ventana principal con `TabPane` unificando todos los módulos
+- Preparar presentación en Canva para sustentación
+
+## 📝 Tareas de Cada Integrante
+
+Cada persona debe completar 3 tareas técnicas + 1 de documentación:
+
+1. **Crear clases de modelo** con herencia y polimorfismo según corresponda
+   - Ejemplo: Persona 2 crea clase abstracta `Experiencia` con hijos `ExperienciaDocente` y `ExperienciaNoDocente`
+
+2. **Diseñar interfaz gráfica** en Scene Builder
+   - Formularios de entrada
+   - Tablas para visualización de datos
+
+3. **Implementar persistencia**
+   - Guardar datos en archivos .dat
+   - Cargar datos al iniciar
+
+4. **Documentación asignada** (ver roles arriba)
+
+### Balanceo de Carga
+
+- **Persona 4**: Aunque hace la integración final, sus clases son las más simples (solo `Investigacion` y `Publicacion`, sin herencia compleja)
+- **Persona 1**: Menos código complejo porque coordina todo el proyecto
+
+
+## 🔧 Arquitectura Técnica
+
+### Singleton SistemaDocente
+
+Garantiza un único objeto `Docente` en toda la aplicación:
+```java
+// Persona 1 guarda nombre
+SistemaDocente.getInstancia().getDocente().setNombre("Juan");
+
+// Persona 2 agrega experiencia
+SistemaDocente.getInstancia().getDocente().agregarExperiencia(exp);
+
+// Todos trabajan sobre el mismo objeto
+```
+
+### Persistencia
+
+Cada módulo gestiona su propio archivo:
+- Persona 1: `titulos.dat`
+- Persona 2: `experiencias.dat`
+- Persona 3: `capacitaciones.dat`
+- Persona 4: `investigaciones.dat`, `publicaciones.dat`
+
+Al iniciar, cada módulo carga su archivo y actualiza el `Docente` compartido.
+
+## 🛠️ Herramientas Necesarias
+
+- **Control de versiones**: Git/GitHub
+- **Diseño de interfaces**: Scene Builder
+- **Diagramas UML**: Lucidchart o draw.io
+- **Java**: Versión 17 o superior
+- **IDE**: IntelliJ IDEA, Eclipse, NetBeans o VS Code (a elección)
+
+## 📚 Documentación Continua
+
+**NO dejar para el final**:
+
+- **Persona 1**: Actualiza UML mientras diseña clases
+- **Persona 2**: Escribe Manual Técnico en Google Doc compartido durante desarrollo
+- **Persona 3**: Captura screenshots y documenta en Google Doc mientras programa
+- **Persona 4**: Prepara slides de presentación progresivamente
+
+## 📊 Resumen de Asignaciones
+
+| Persona | Módulos | Documentación |
+|---------|---------|---------------|
+| **1** | Datos Personales + Títulos | Diagrama UML |
+| **2** | Experiencia Laboral | Manual Técnico |
+| **3** | Capacitación | Manual de Usuario |
+| **4** | Investigación + Publicaciones | Integración + Presentación |
+
+
+## 🚀 Flujo de Trabajo
+
+1. Persona 1 crea estructura inicial y sube al repositorio
+2. Todos clonan el repositorio
+3. Cada persona desarrolla su módulo independientemente
+4. Documentación en paralelo (no al final)
+5. Persona 4 integra todos los módulos
+6. Revisión grupal y ajustes finales
+7. Preparación de sustentación
