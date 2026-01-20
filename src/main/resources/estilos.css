@@ -1,0 +1,51 @@
+.root {
+    -fx-background-color: #ECF0F1;
+}
+
+.titulo {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+    -fx-padding: 0 0 10 0;
+}
+
+.label-form {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495E;
+}
+
+.boton-primario {
+    -fx-background-color: #3498DB;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 8px 20px;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+.boton-primario:hover {
+    -fx-background-color: #2980B9;
+}
+
+.boton-secundario {
+    -fx-background-color: #95A5A6;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 8px 20px;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+.boton-secundario:hover {
+    -fx-background-color: #7F8C8D;
+}
+
+.tabla {
+    -fx-font-size: 12px;
+}
+
+.campo-texto {
+    -fx-font-size: 13px;
+    -fx-padding: 5px;
+}
