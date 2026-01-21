@@ -7,7 +7,7 @@ Utilizamos FXML con Scene Builder porque facilita el desarrollo visual sin neces
 Para garantizar que el proyecto no parezca obra de 4 personas diferentes:
 
 - **Archivo CSS compartido** (`estilos.css`): Define colores, tamaños de fuente y estilos de botones
-- **Plantilla FXML base** (`PlantillaFormulario.fxml`): Estructura base que todos copian para sus módulos(que aun no esta echo xdxdxd)
+- **Plantilla FXML base** (`PlantillaFormulario.fxml`): Estructura base que todos copian para sus módulos
 
 ### Patrón Singleton - SistemaDocente
 
