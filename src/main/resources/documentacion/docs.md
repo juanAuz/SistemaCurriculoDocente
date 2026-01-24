@@ -94,15 +94,6 @@ SistemaDocente.getInstancia().getDocente().agregarExperiencia(exp);
 // Todos trabajan sobre el mismo objeto
 ```
 
-### Persistencia
-
-Cada módulo gestiona su propio archivo:
-- Persona 1: `titulos.dat`
-- Persona 2: `experiencias.dat`
-- Persona 3: `capacitaciones.dat`
-- Persona 4: `investigaciones.dat`, `publicaciones.dat`
-
-Al iniciar, cada módulo carga su archivo y actualiza el `Docente` compartido.
 
 ## 🛠️ Herramientas Necesarias
 
