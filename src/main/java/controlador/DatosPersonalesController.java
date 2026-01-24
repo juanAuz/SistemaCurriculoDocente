@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import modelo.Docente;
 import modelo.enums.EstadoCivil;
 import modelo.enums.TipoSangre;
+import persistencia.DocentePersistencia;
 import util.SistemaDocente;
 public class DatosPersonalesController implements Initializable{
      @FXML
@@ -57,9 +58,10 @@ public class DatosPersonalesController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        SistemaDocente.getInstancia().setDocente(DocentePersistencia.cargar());
         docente = SistemaDocente.getInstancia().getDocente();
         cargarCombos();
-        cargarDatosFormulario();
+        cargarDatosFormulario(docente);
         lblEstado.setText("");
         lblEstado.getStyleClass().clear();
     }
@@ -72,13 +74,16 @@ public class DatosPersonalesController implements Initializable{
             return;
         }
         guardarDatosDocente();
+        //
+        DocentePersistencia.guardar(docente);
+        //
         mostrarExito();
     }
     private void cargarCombos() {
         cmbEstadoCivil.getItems().setAll(EstadoCivil.values());
         cmbTipoSangre.getItems().setAll(TipoSangre.values());
     }
-    private void cargarDatosFormulario() {
+    private void cargarDatosFormulario(Docente docente) {
         txtCedula.setText(docente.getCedula());
         txtNombres.setText(docente.getNombres());
         txtCorreoElectronico.setText(docente.getCorreoElectronico());
