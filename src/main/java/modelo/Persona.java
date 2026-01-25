@@ -66,8 +66,14 @@ public class Persona implements Serializable{
     public EstadoCivil getEstadoCivil() {
         return estadoCivil;
     }
+    public void setEstadoCivil(EstadoCivil estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
     public TipoSangre getTipoSangre() {
         return tipoSangre;
+    }
+    public void setTipoSangre(TipoSangre tipoSangre) {
+        this.tipoSangre = tipoSangre;
     }
     public String getLugarNacimiento() {
         return lugarNacimiento;

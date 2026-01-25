@@ -19,6 +19,11 @@ public class Docente extends Persona{
     private transient ObservableList<ProduccionAcademica> investigaciones;
     private transient ObservableList<ProduccionAcademica> publicaciones;
 
+    private List<Formacion> titulosSerializable;
+    private List<Experiencia> experienciaSerializable;
+    private List<Capacitacion> capacitacionesSerializable;
+    private List<ProduccionAcademica> investigacionesSerializable;
+    private List<ProduccionAcademica> publicacionesSerializable;
     public Docente() {
         super();
         this.titulos = FXCollections.observableArrayList();
@@ -80,4 +85,45 @@ public class Docente extends Persona{
     public void setPublicacionesCargar(List<ProduccionAcademica> publicaciones){
         this.publicaciones = FXCollections.observableArrayList(publicaciones);
     }
+
+    public List<Formacion> getTitulosSerializable() {
+        return titulosSerializable;
+    }
+
+    public void setTitulosSerializable(List<Formacion> titulosSerializable) {
+        this.titulosSerializable = titulosSerializable;
+    }
+
+    public List<Experiencia> getExperienciaSerializable() {
+        return experienciaSerializable;
+    }
+
+    public void setExperienciaSerializable(List<Experiencia> experienciaSerializable) {
+        this.experienciaSerializable = experienciaSerializable;
+    }
+
+    public List<Capacitacion> getCapacitacionesSerializable() {
+        return capacitacionesSerializable;
+    }
+
+    public void setCapacitacionesSerializable(List<Capacitacion> capacitacionesSerializable) {
+        this.capacitacionesSerializable = capacitacionesSerializable;
+    }
+
+    public List<ProduccionAcademica> getInvestigacionesSerializable() {
+        return investigacionesSerializable;
+    }
+
+    public void setInvestigacionesSerializable(List<ProduccionAcademica> investigacionesSerializable) {
+        this.investigacionesSerializable = investigacionesSerializable;
+    }
+
+    public List<ProduccionAcademica> getPublicacionesSerializable() {
+        return publicacionesSerializable;
+    }
+
+    public void setPublicacionesSerializable(List<ProduccionAcademica> publicacionesSerializable) {
+        this.publicacionesSerializable = publicacionesSerializable;
+    }
+    
 }
