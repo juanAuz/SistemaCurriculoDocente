@@ -3,7 +3,7 @@ package modelo.formacion;
 import modelo.enums.TipoPosgrado;
 
 public class FormacionCuartoNivel extends Formacion{
-    public TipoPosgrado tipoPosgrado;
+    private TipoPosgrado tipoPosgrado;
     public FormacionCuartoNivel() {
         super();
     }

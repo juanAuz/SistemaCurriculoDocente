@@ -58,7 +58,7 @@ public class DatosPersonalesController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        SistemaDocente.getInstancia().setDocente(DocentePersistencia.cargar());
+        SistemaDocente.getInstancia().setDocente(DocentePersistencia.cargar()); //arreglar esto luego xd
         docente = SistemaDocente.getInstancia().getDocente();
         cargarCombos();
         cargarDatosFormulario(docente);

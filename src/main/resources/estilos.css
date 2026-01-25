@@ -5,7 +5,7 @@
 .titulo {
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #2C3E50;
+    -fx-text-fill: #32005e;
     -fx-padding: 0 0 10 0;
 }
 
@@ -16,16 +16,18 @@
 }
 
 .boton-primario {
-    -fx-background-color: #3498DB;
+    -fx-background-color: #32005e9a;
     -fx-text-fill: white;
     -fx-font-size: 13px;
     -fx-padding: 8px 20px;
     -fx-cursor: hand;
     -fx-background-radius: 5;
+    -fx-border-radius: 15;
+
 }
 
 .boton-primario:hover {
-    -fx-background-color: #2980B9;
+    -fx-background-color: #32005e;
 }
 
 .boton-secundario {
@@ -41,8 +43,87 @@
     -fx-background-color: #7F8C8D;
 }
 
-.tabla {
+/* Fondo general de la tabla */
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E9D8FD;
+    -fx-border-width: 1;
+}
+
+/* Header de las columnas */
+.table-view .column-header-background {
+    -fx-background-color: #DDD6FE;
+}
+
+.table-view .column-header {
+    -fx-background-color: #DDD6FE;
+    -fx-border-color: #B794F6;
+    -fx-border-width: 0 1 1 0;
+    -fx-border-radius: 20 20 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #32005e;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* Filas normales */
+.table-view .table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent;
+}
+
+/* Filas alternas (zebra striping) */
+.table-view .table-row-cell:odd {
+    -fx-background-color: #FEFCE8;
+}
+
+/* Fila seleccionada */
+.table-view .table-row-cell:selected {
+    -fx-background-color: #a277f3 !important;
+}
+
+/* Hover sobre fila */
+.table-view .table-row-cell:hover {
+    -fx-background-color: #E9D8FD;
+}
+
+/* Celdas - texto */
+.table-view .table-cell {
+    -fx-text-fill: #1F2937;
     -fx-font-size: 12px;
+    -fx-padding: 5 10 5 10;
+}
+
+.table-view .table-row-cell:selected .table-cell:focused {
+    -fx-border-color: transparent;
+}
+
+/* Scrollbar vertical */
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #B794F6;
+    -fx-background-radius: 5;
+}
+
+.table-view .scroll-bar:vertical .track {
+    -fx-background-color: #F3F4F6;
+}
+
+/* Scrollbar horizontal */
+.table-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: #B794F6;
+    -fx-background-radius: 5;
+}
+
+.table-view .scroll-bar:horizontal .track {
+    -fx-background-color: #F3F4F6;
+}
+
+/* Placeholder cuando está vacía */
+.table-view .placeholder .label {
+    -fx-text-fill: #9CA3AF;
+    -fx-font-size: 14px;
 }
 
 .campo-texto {
@@ -58,4 +139,55 @@
     -fx-font-size: 13px;
     -fx-font-weight: bold;
     -fx-text-fill: #FF0000;
+}
+/* Fondo general de tabs */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #FEFCE8;
+}
+
+/* Tab normal - con selector específico */
+.tab-pane:top .tab-header-area .headers-region .tab {
+    -fx-background-color: #DDD6FE;
+    -fx-background-radius: 12 12 0 0;
+    -fx-padding: 8 20 8 20;
+    -fx-text-fill: #000000;
+}
+
+/* Tab seleccionada - con selector específico */
+.tab-pane:top .tab-header-area .headers-region .tab:selected {
+    -fx-background-color: #6b29a530;
+    -fx-border-width: 3 0 0 0;
+    -fx-border-color: #B794F6;
+}
+
+/* Texto normal */
+.tab-pane .tab-header-area .headers-region .tab .tab-label {
+    -fx-text-fill: #555555;
+    -fx-font-size: 13px;
+}
+
+/* Texto seleccionado */
+.tab-pane .tab-header-area .headers-region .tab:selected .tab-label {
+    -fx-text-fill: #000000;
+}
+
+/* Quitar focus */
+.tab-pane .tab-header-area .headers-region .tab .focus-indicator {
+    -fx-border-color: transparent;
+}
+/* Contenido */
+.tab-pane .tab-content-area {
+    -fx-background-color: #ffffff;
+}
+
+/* Texto de tab normal */
+.tab-pane:top .tab-header-area .headers-region .tab .tab-label {
+    -fx-text-fill: #7C3AED !important;
+    -fx-font-size: 14px;
+}
+
+/* Texto de tab seleccionada */
+.tab-pane:top .tab-header-area .headers-region .tab:selected .tab-label {
+    -fx-text-fill: #370355 !important;
+    -fx-font-weight: bold;
 }
