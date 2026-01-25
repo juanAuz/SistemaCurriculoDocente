@@ -26,4 +26,9 @@ public class CapacitacionRecibida extends Capacitacion {
     public String toString() {
         return super.getTema() + " (Recibida - " + estado + ")";
     }
+    @Override
+    public String getDetalle() {
+        // Aquí devolvemos el atributo único de esta clase
+        return "Estado: " + this.estado; 
+    }
 }

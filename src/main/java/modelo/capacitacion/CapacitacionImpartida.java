@@ -24,4 +24,10 @@ public class CapacitacionImpartida extends Capacitacion {
     public String toString() {
         return super.getTema() + " (Dictada a: " + publicoDirigido + ")";
     }
+
+    @Override
+    public String getDetalle() {
+        // Aquí devolvemos el atributo único de la otra clase
+        return "Público: " + this.publicoDirigido;
+    }
 }
