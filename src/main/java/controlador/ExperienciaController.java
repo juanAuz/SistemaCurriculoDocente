@@ -26,7 +26,7 @@ public class ExperienciaController implements Initializable {
     @FXML private ComboBox<String> cbTipo;
     @FXML private Label lblEstado;
 
-    // ===== TABLA =====
+ 
     @FXML private TableView<Experiencia> tblExperiencia;
     @FXML private TableColumn<Experiencia, String> colInstitucion;
     @FXML private TableColumn<Experiencia, String> colDesde;
@@ -41,7 +41,7 @@ public class ExperienciaController implements Initializable {
 
         cbTipo.getItems().addAll("Docente", "No Docente");
 
-        // ⚠️ USAMOS LA LISTA REAL DEL DOCENTE
+       
         listaExperiencias =
             SistemaDocente.getInstancia()
                 .getDocente()
@@ -79,7 +79,7 @@ public class ExperienciaController implements Initializable {
         limpiarMensaje();
     }
 
-    // ===== AGREGAR =====
+
     @FXML
     void agregarExperiencia(ActionEvent event) {
 
@@ -103,14 +103,14 @@ public class ExperienciaController implements Initializable {
             );
         }
 
-        // 🔥 SOLO SE AGREGA AQUÍ
+      
         listaExperiencias.add(exp);
 
         limpiarFormulario();
         mostrarAceptado("Experiencia agregada correctamente");
     }
 
-    // ===== ELIMINAR =====
+  
     @FXML
     void eliminarExperiencia(ActionEvent event) {
 
@@ -126,7 +126,7 @@ public class ExperienciaController implements Initializable {
         mostrarAceptado("Experiencia eliminada");
     }
 
-    // ===== EDITAR (básico) =====
+ 
     @FXML
     void editarExperiencia(ActionEvent event) {
 
@@ -147,7 +147,7 @@ public class ExperienciaController implements Initializable {
         mostrarAceptado("Edite los datos y presione Agregar");
     }
 
-    // ===== VALIDACIONES =====
+   
     private boolean validarCampos() {
 
         if (txtInstitucion.getText().isBlank()) {
@@ -183,7 +183,7 @@ public class ExperienciaController implements Initializable {
         return true;
     }
 
-    // ===== UTILIDADES =====
+   
     private void ocultarCampos() {
         txtCatedra.setVisible(false);
         txtFuncion.setVisible(false);
