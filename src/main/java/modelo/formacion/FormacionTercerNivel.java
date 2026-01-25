@@ -1,7 +1,7 @@
 package modelo.formacion;
 
 public class FormacionTercerNivel extends Formacion{
-    public String carrera;
+    private String carrera;
     @Override
     public String getNivel() {
         return "Tercer nivel - Ingenieria/Licenciatura";
