@@ -5,7 +5,7 @@ public abstract class Formacion implements Serializable{
     private static final long serialVersionUID = 1L;
 
     private String titulo;
-    private String Universidad;
+    private String universidad;
     private String ciudad;
     private LocalDate fechaObtencion;
 
@@ -20,11 +20,11 @@ public abstract class Formacion implements Serializable{
     }
 
     public String getUniversidad() {
-        return Universidad;
+        return universidad;
     }
 
     public void setUniversidad(String universidad) {
-        Universidad = universidad;
+        this.universidad = universidad;
     }
 
     public String getCiudad() {
