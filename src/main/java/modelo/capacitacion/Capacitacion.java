@@ -21,6 +21,7 @@ public abstract class Capacitacion {
 
     // Método abstracto: Obliga a las hijas a implementarlo
     public abstract String getTipo();
+    public abstract String getDetalle();
 
     // Getters y Setters (Encapsulamiento)
     public String getTema() { return tema; }
