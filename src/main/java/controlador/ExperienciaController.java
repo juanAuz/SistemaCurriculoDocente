@@ -17,7 +17,7 @@ import util.SistemaDocente;
 
 public class ExperienciaController implements Initializable {
 
-    // ===== FORMULARIO =====
+
     @FXML private TextField txtInstitucion;
     @FXML private TextField txtCatedra;
     @FXML private TextField txtFuncion;
