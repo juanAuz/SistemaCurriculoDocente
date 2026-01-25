@@ -49,3 +49,13 @@
     -fx-font-size: 13px;
     -fx-padding: 5px;
 }
+.font-aceptado{
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0AFF00;
+}
+.font-rechazado{
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FF0000;
+}
