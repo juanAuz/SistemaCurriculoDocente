@@ -8,7 +8,8 @@ import javafx.collections.ObservableList;
 import modelo.capacitacion.Capacitacion;
 import modelo.experiencia.Experiencia;
 import modelo.formacion.Formacion;
-import modelo.produccion.ProduccionAcademica;
+import modelo.produccion.Investigacion;
+import modelo.produccion.Publicacion;
 
 public class Docente extends Persona{
     private static final long serialVersionUID = 1L;
@@ -16,8 +17,8 @@ public class Docente extends Persona{
     private transient ObservableList<Formacion> titulos;
     private transient ObservableList<Experiencia> experiencia;
     private transient ObservableList<Capacitacion> capacitaciones;
-    private transient ObservableList<ProduccionAcademica> investigaciones;
-    private transient ObservableList<ProduccionAcademica> publicaciones;
+    private transient ObservableList<Investigacion> investigaciones;
+    private transient ObservableList<Publicacion> publicaciones;
 
     private List<Formacion> titulosSerializable;
     private List<Experiencia> experienciaSerializable;
@@ -64,25 +65,25 @@ public class Docente extends Persona{
         this.capacitaciones = FXCollections.observableArrayList(capacitaciones);
     }
 
-    public ObservableList<ProduccionAcademica> getInvestigaciones() {
+    public ObservableList<Investigacion> getInvestigaciones() {
         return investigaciones;
     }
 
-    public List<ProduccionAcademica> getInvestigacionesGuardar(){
+    public List<Investigacion> getInvestigacionesGuardar(){
         return new ArrayList<>(investigaciones);
     }
-    public void setInvestigacionesCargar(List<ProduccionAcademica> investigaciones){
+    public void setInvestigacionesCargar(List<Investigacion> investigaciones){
         this.investigaciones = FXCollections.observableArrayList(investigaciones);
     }
 
-    public ObservableList<ProduccionAcademica> getPublicaciones() {
+    public ObservableList<Publicacion> getPublicaciones() {
         return publicaciones;
     }
     
-    public List<ProduccionAcademica> getPublicacionesGuardar(){
+    public List<Publicacion> getPublicacionesGuardar(){
         return new ArrayList<>(publicaciones);
     }
-    public void setPublicacionesCargar(List<ProduccionAcademica> publicaciones){
+    public void setPublicacionesCargar(List<Publicacion> publicaciones){
         this.publicaciones = FXCollections.observableArrayList(publicaciones);
     }
 
