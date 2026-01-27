@@ -153,7 +153,7 @@
                                                 <Insets top="20.0" />
                                              </VBox.margin>
                                           </HBox>
-                                          <Label fx:id="lblEstado" alignment="CENTER" maxWidth="1.7976931348623157E308" />
+                                          <Label fx:id="lblEstadoSeg" alignment="CENTER" maxWidth="1.7976931348623157E308" />
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" top="20.0" />
@@ -288,7 +288,7 @@
                                                 <Insets top="20.0" />
                                              </VBox.margin>
                                           </HBox>
-                                          <Label fx:id="lblEstado1" alignment="CENTER" maxWidth="1.7976931348623157E308" />
+                                          <Label fx:id="lblEstadoTer" alignment="CENTER" maxWidth="1.7976931348623157E308" />
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" top="20.0" />
@@ -437,7 +437,7 @@
                                                 <Insets top="20.0" />
                                              </VBox.margin>
                                           </HBox>
-                                          <Label fx:id="lblEstado11" alignment="CENTER" maxWidth="1.7976931348623157E308" />
+                                          <Label fx:id="lblEstadoCuart" alignment="CENTER" maxWidth="1.7976931348623157E308" />
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" top="20.0" />
