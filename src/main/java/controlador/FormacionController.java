@@ -173,7 +173,6 @@ public class FormacionController implements Initializable {
         });
     }
     
-    // ==================== SEGUNDO NIVEL ====================
     
     @FXML
     void guardarFormacionSeg(ActionEvent event) {
@@ -232,7 +231,6 @@ public class FormacionController implements Initializable {
         mostrarExitoSeg();
     }
     
-    // ==================== TERCER NIVEL ====================
     
     @FXML
     void guardarFormacionTer(ActionEvent event) {
@@ -291,7 +289,6 @@ public class FormacionController implements Initializable {
         mostrarExitoTer();
     }
     
-    // ==================== CUARTO NIVEL ====================
     
     @FXML
     void guardarFormacionCuart(ActionEvent event) {
@@ -352,7 +349,7 @@ public class FormacionController implements Initializable {
         mostrarExitoCuart();
     }
     
-    // ==================== VALIDACIONES ====================
+    // VALIDACIONES 
     
     private List<String> validarCamposSeg() {
         List<String> errores = new ArrayList<>();
@@ -414,7 +411,7 @@ public class FormacionController implements Initializable {
         return errores;
     }
     
-    // ==================== MÉTODOS AUXILIARES ====================
+    // Otros metodos
     
     private boolean estaVacioTf(TextField tf) {
         return tf.getText() == null || tf.getText().trim().isEmpty();
@@ -428,7 +425,7 @@ public class FormacionController implements Initializable {
         return dp.getValue() == null;
     }
     
-    // ==================== CARGAR DATOS EN FORMULARIOS ====================
+    //  CARGAR DATOS EN FORMULARIOS 
     
     private void cargarDatosFormularioSeg(FormacionSegundoNivel formacion) {
         txtTituloSeg.setText(formacion.getTitulo());
@@ -452,7 +449,7 @@ public class FormacionController implements Initializable {
         dpFechaGradoCuart.setValue(formacion.getFechaObtencion());
     }
     
-    // ==================== LIMPIAR FORMULARIOS ====================
+    // LIMPIAR FORMULARIOS 
     
     private void limpiarFormularioSeg() {
         txtTituloSeg.clear();
@@ -485,7 +482,7 @@ public class FormacionController implements Initializable {
         limpiarLabelEstadoCuart();
     }
     
-    // ==================== MOSTRAR MENSAJES ====================
+    // MOSTRAR MENSAJES 
     
     private void mostrarErrorSeg(List<String> errores) {
         lblEstadoSeg.setText(String.join("\n", errores));
