@@ -2,7 +2,7 @@ package modelo.formacion;
 
 public class FormacionSegundoNivel extends Formacion{
     private String tecnologia;
-    private FormacionSegundoNivel(){
+    public FormacionSegundoNivel(){
         super();
     }
     

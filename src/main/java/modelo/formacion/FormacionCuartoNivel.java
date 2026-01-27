@@ -14,4 +14,7 @@ public class FormacionCuartoNivel extends Formacion{
     public TipoPosgrado getTipoPosgrado() {
         return tipoPosgrado;
     }
+    public void setTipoPosgrado(TipoPosgrado tipoPosgrado) {
+        this.tipoPosgrado = tipoPosgrado;
+    }
 }
