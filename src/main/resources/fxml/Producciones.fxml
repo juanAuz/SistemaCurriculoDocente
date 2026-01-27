@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../estilos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ProduccionController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="6.0" prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="titulo" text="Producción Académica">
+               <font>
+                  <Font name="Adwaita Mono Italic" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <HBox>
+               <children>
+                  <VBox maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="label-form" text="Investigaciones">
+                           <padding>
+                              <Insets bottom="10.0" left="15.0" />
+                           </padding>
+                        </Label>
+                        <VBox fx:id="panelAgregarInv">
+                           <children>
+                              <GridPane hgap="10.0" minHeight="-Infinity" vgap="10.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="NEVER" maxWidth="140.0" minWidth="10.0" prefWidth="96.0" />
+                                  <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label styleClass="label-form" text="Título:" GridPane.halignment="LEFT" GridPane.hgrow="NEVER">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label styleClass="label-form" text="Institución:" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label styleClass="label-form" text="Año:" GridPane.hgrow="NEVER" GridPane.rowIndex="2">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtTituloInvAgregar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                                    <TextField fx:id="txtInstitucionInvAgregar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtAnioInvAgregar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" right="20.0" />
+                                 </padding>
+                              </GridPane>
+                              <HBox alignment="CENTER" spacing="10.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#btnAgregarInvOnAction" styleClass="boton-primario" text="Agregar" />
+                                    <Button mnemonicParsing="false" onAction="#btnLimpiarInvOnAction" styleClass="boton-secundario" text="Limpiar" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="panelEditarInv">
+                           <children>
+                              <GridPane hgap="10.0" minHeight="-Infinity" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="140.0" minWidth="10.0" prefWidth="96.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label styleClass="label-form" text="Título:" GridPane.halignment="LEFT" GridPane.hgrow="NEVER">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label styleClass="label-form" text="Institución:" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label styleClass="label-form" text="Año:" GridPane.hgrow="NEVER" GridPane.rowIndex="2">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtTituloInvEditar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                                    <TextField fx:id="txtInstitucionInvEditar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtAnioInvEditar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" right="20.0" />
+                                 </padding>
+                              </GridPane>
+                              <HBox alignment="CENTER" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#btnActualizarInvOnAction" styleClass="boton-primario" text="Actualizar" />
+                                    <Button mnemonicParsing="false" onAction="#btnCancelarInvOnAction" styleClass="boton-secundario" text="Cancelar" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Label fx:id="lblEstadoInv" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="300.0" styleClass="label-form">
+                           <padding>
+                              <Insets bottom="10.0" left="15.0" />
+                           </padding>
+                        </Label>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="label-form" text="Lista de registros">
+                           <padding>
+                              <Insets bottom="10.0" left="15.0" />
+                           </padding>
+                        </Label>
+                        <TableView fx:id="tblInvestigaciones" maxHeight="1.7976931348623157E308" minHeight="50.0" prefWidth="0.0" styleClass="tabla">
+                          <columns>
+                            <TableColumn fx:id="colTituloInv" prefWidth="75.0" text="Título" />
+                            <TableColumn fx:id="colInstitucionInv" prefWidth="75.0" text="Institución" />
+                              <TableColumn fx:id="colAnioInv" prefWidth="75.0" text="Año" />
+                              <TableColumn fx:id="colAccionInv" prefWidth="75.0" text="Acción" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="label-form" text="Publicaciones">
+                           <padding>
+                              <Insets bottom="10.0" left="15.0" />
+                           </padding>
+                        </Label>
+                        <VBox fx:id="panelAgregarPub">
+                           <children>
+                              <GridPane hgap="10.0" minHeight="-Infinity" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="140.0" minWidth="10.0" prefWidth="93.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label styleClass="label-form" text="Título:">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label styleClass="label-form" text="Editorial:" GridPane.rowIndex="1">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label styleClass="label-form" text="Año:" GridPane.rowIndex="2">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtEditorialPubAgregar" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtTituloPubAgregar" styleClass="campo-texto" GridPane.columnIndex="1" />
+                                    <TextField fx:id="txtAnioPubAgregar" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" right="20.0" />
+                                 </padding>
+                              </GridPane>
+                              <HBox alignment="CENTER" spacing="10.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#btnAgregarPubOnAction" styleClass="boton-primario" text="Agregar" />
+                                    <Button mnemonicParsing="false" onAction="#btnLimpiarPubOnAction" styleClass="boton-secundario" text="Limpiar" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="panelEditarPub">
+                           <children>
+                              <GridPane hgap="10.0" minHeight="-Infinity" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="140.0" minWidth="10.0" prefWidth="96.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label styleClass="label-form" text="Título:" GridPane.halignment="LEFT" GridPane.hgrow="NEVER">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label styleClass="label-form" text="Editorial" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label styleClass="label-form" text="Año:" GridPane.hgrow="NEVER" GridPane.rowIndex="2">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtTituloPubEditar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                                    <TextField fx:id="txtEditorialPubEditar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtAnioPubEditar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="campo-texto" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" right="20.0" />
+                                 </padding>
+                              </GridPane>
+                              <HBox alignment="CENTER" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#btnActualizarPubOnAction" styleClass="boton-primario" text="Actualizar" />
+                                    <Button mnemonicParsing="false" onAction="#btnCancelarPubOnAction" styleClass="boton-secundario" text="Cancelar" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Label fx:id="lblEstadoPub" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="300.0" styleClass="label-form">
+                           <padding>
+                              <Insets bottom="10.0" left="15.0" />
+                           </padding>
+                        </Label>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="label-form" text="Lista de registros">
+                           <padding>
+                              <Insets bottom="10.0" left="15.0" />
+                           </padding>
+                        </Label>
+                        <TableView fx:id="tblPublicaciones" maxHeight="1.7976931348623157E308" minHeight="50.0" prefWidth="0.0" styleClass="tabla">
+                           <columns>
+                              <TableColumn fx:id="colTituloPub" prefWidth="75.0" text="Título" />
+                              <TableColumn fx:id="colEditorialPub" prefWidth="75.0" text="Editorial" />
+                              <TableColumn fx:id="colAnioPub" prefWidth="75.0" text="Año" />
+                              <TableColumn fx:id="colAccionPub" prefWidth="75.0" text="Acción" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnActualizarInvOnAction" styleClass="boton-primario" text="Salir">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

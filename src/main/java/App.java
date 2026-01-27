@@ -12,7 +12,12 @@ public class App extends Application {
         );
 
         Scene scene = new Scene(loader.load());
-
+        
+        //Para evitar que el usuario haga muy pequeña la ventana
+        //stage.setMinWidth(800);
+        //stage.setMinHeight(600);
+        //---------------------------------
+        
         stage.setTitle("Datos personales");
         stage.setScene(scene);
         stage.show();
