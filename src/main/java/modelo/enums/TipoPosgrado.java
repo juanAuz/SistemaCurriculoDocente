@@ -1,7 +1,6 @@
 package modelo.enums;
 
 public enum TipoPosgrado {
-    ESPECIALIZACION("Especialización"),
     MAESTRIA("Maestría"),
     DOCTORADO("Doctorado"),
     POSDOCTORADO("Posdoctorado");
