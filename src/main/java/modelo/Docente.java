@@ -23,8 +23,8 @@ public class Docente extends Persona{
     private List<Formacion> titulosSerializable;
     private List<Experiencia> experienciaSerializable;
     private List<Capacitacion> capacitacionesSerializable;
-    private List<ProduccionAcademica> investigacionesSerializable;
-    private List<ProduccionAcademica> publicacionesSerializable;
+    private List<Investigacion> investigacionesSerializable;
+    private List<Publicacion> publicacionesSerializable;
     public Docente() {
         super();
         this.titulos = FXCollections.observableArrayList();
@@ -111,19 +111,19 @@ public class Docente extends Persona{
         this.capacitacionesSerializable = capacitacionesSerializable;
     }
 
-    public List<ProduccionAcademica> getInvestigacionesSerializable() {
+    public List<Investigacion> getInvestigacionesSerializable() {
         return investigacionesSerializable;
     }
 
-    public void setInvestigacionesSerializable(List<ProduccionAcademica> investigacionesSerializable) {
+    public void setInvestigacionesSerializable(List<Investigacion> investigacionesSerializable) {
         this.investigacionesSerializable = investigacionesSerializable;
     }
 
-    public List<ProduccionAcademica> getPublicacionesSerializable() {
+    public List<Publicacion> getPublicacionesSerializable() {
         return publicacionesSerializable;
     }
 
-    public void setPublicacionesSerializable(List<ProduccionAcademica> publicacionesSerializable) {
+    public void setPublicacionesSerializable(List<Publicacion> publicacionesSerializable) {
         this.publicacionesSerializable = publicacionesSerializable;
     }
     
