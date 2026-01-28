@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -20,21 +21,32 @@
    <children>
       <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="6.0" prefHeight="0.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label styleClass="titulo" text="Gestión de Capacitaciones">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </Label>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Label styleClass="titulo" text="Gestión de Capacitaciones">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#regresarMainScreen" styleClass="boton-primario" text="Volver" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="10.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </StackPane>
 
             <Label maxWidth="1.7976931348623157E308" styleClass="label-form" text="Formulario de datos:" VBox.vgrow="SOMETIMES">
                <padding>
                   <Insets bottom="10.0" left="15.0" />
                </padding>
             </Label>
-            <Button mnemonicParsing="false" styleClass="boton-primario" text="Volver" />
 
             <GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="592.0" vgap="10.0">
               <columnConstraints>
@@ -128,7 +140,7 @@
                   <Insets bottom="10.0" left="15.0" />
                </padding>
             </Label>
-            <TableView fx:id="tblCapacitaciones" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="1024.0" styleClass="tabla" VBox.vgrow="ALWAYS">
+            <TableView fx:id="tblCapacitaciones" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="1024.0" styleClass="tabla" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="colTema" prefWidth="250.0" text="Tema" />
                 <TableColumn fx:id="colInstitucion" prefWidth="200.0" text="Institución" />

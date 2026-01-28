@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.time.LocalDate;
+import util.*;
 
 public class CapacitacionController {
 
@@ -142,5 +143,9 @@ public class CapacitacionController {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+    @FXML
+    void regresarMainScreen(ActionEvent event) {
+        NavegacionUtil.cambiarEscena(event, "/fxml/MainScreen.fxml");
     }
 }

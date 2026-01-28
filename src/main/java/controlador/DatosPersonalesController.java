@@ -16,6 +16,7 @@ import modelo.Docente;
 import modelo.enums.EstadoCivil;
 import modelo.enums.TipoSangre;
 import persistencia.DocentePersistencia;
+import util.NavegacionUtil;
 import util.SistemaDocente;
 public class DatosPersonalesController implements Initializable{
      @FXML
@@ -58,7 +59,6 @@ public class DatosPersonalesController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        SistemaDocente.getInstancia().setDocente(DocentePersistencia.cargar()); //arreglar esto luego xd
         docente = SistemaDocente.getInstancia().getDocente();
         cargarCombos();
         cargarDatosFormulario(docente);
@@ -74,9 +74,6 @@ public class DatosPersonalesController implements Initializable{
             return;
         }
         guardarDatosDocente();
-        //
-        DocentePersistencia.guardar(docente);
-        //
         mostrarExito();
     }
     private void cargarCombos() {
@@ -182,7 +179,10 @@ public class DatosPersonalesController implements Initializable{
         lblEstado.setText("Datos guardados correctamente");
         lblEstado.getStyleClass().setAll("font-aceptado");
     }
-
+    @FXML
+    void regresarMainScreen(ActionEvent event) {
+        NavegacionUtil.cambiarEscena(event, "/fxml/MainScreen.fxml");
+    }
 
 
 }

@@ -13,22 +13,34 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="542.0" prefWidth="832.0" stylesheets="@../estilos.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ExperienciaController">
+<AnchorPane prefHeight="542.0" prefWidth="832.0" stylesheets="@../estilos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ExperienciaController">
 
    <children>
       <VBox alignment="TOP_CENTER" prefWidth="830.0" stylesheets="@../estilos.css">
-
-         <Label styleClass="titulo" text="Experiencia Laboral">
-            <font>
-               <Font size="16.0" />
-            </font>
-            <padding>
-               <Insets bottom="0" left="0" right="0" top="10" />
-            </padding>
-         </Label>
+         <StackPane>
+            <children>
+               <Label styleClass="titulo" text="Experiencia Laboral">
+                  <font>
+                     <Font name="Adwaita Mono Italic" size="16.0" />
+                  </font>
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+               </Label>
+               <Button mnemonicParsing="false" onAction="#regresarMainScreen" styleClass="boton-primario" text="Regresar" StackPane.alignment="CENTER_LEFT">
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+               </Button>
+            </children>
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+         </StackPane>
 
          <GridPane hgap="10" vgap="10">
             <padding>

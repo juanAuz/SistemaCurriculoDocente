@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import modelo.experiencia.Experiencia;
 import modelo.experiencia.ExperienciaDocente;
 import modelo.experiencia.ExperienciaNoDocente;
+import util.NavegacionUtil;
 import util.SistemaDocente;
 
 
@@ -218,6 +219,10 @@ public class ExperienciaController implements Initializable {
     private void mostrarRechazado(String msg) {
         lblEstado.setText(msg);
         lblEstado.getStyleClass().setAll("font-rechazado");
+    }
+    @FXML
+    void regresarMainScreen(ActionEvent event) {
+        NavegacionUtil.cambiarEscena(event, "/fxml/MainScreen.fxml");
     }
 }
 
