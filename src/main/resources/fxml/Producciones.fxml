@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -18,14 +19,26 @@
    <children>
       <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="6.0" prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label styleClass="titulo" text="Producción Académica">
-               <font>
-                  <Font name="Adwaita Mono Italic" size="16.0" />
-               </font>
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </Label>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Button minHeight="50.0" mnemonicParsing="false" onAction="#regresarMainScreen" styleClass="boton-primario" text="Regresar" StackPane.alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="20.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <Label styleClass="titulo" text="Producción Académica">
+                     <font>
+                        <Font name="Adwaita Mono Italic" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </StackPane>
             <HBox>
                <children>
                   <VBox maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
@@ -287,15 +300,7 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <HBox minHeight="50.0" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button minHeight="50.0" mnemonicParsing="false" onAction="#regresarMainScreen" styleClass="boton-primario" text="Regresar">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
+            <HBox minHeight="50.0" prefHeight="100.0" prefWidth="200.0" />
          </children>
       </VBox>
    </children>
