@@ -289,7 +289,7 @@
             </HBox>
             <HBox minHeight="50.0" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button minHeight="50.0" mnemonicParsing="false" onAction="#regresarMainScreen" styleClass="boton-primario" text="Salir">
+                  <Button minHeight="50.0" mnemonicParsing="false" onAction="#regresarMainScreen" styleClass="boton-primario" text="Regresar">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" top="10.0" />
                      </HBox.margin>
