@@ -4,9 +4,11 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 import modelo.produccion.Investigacion;
 import modelo.produccion.Publicacion;
+import util.NavegacionUtil;
 import util.SistemaDocente;
 import javafx.scene.layout.HBox;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.event.ActionEvent;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -366,5 +368,9 @@ public class ProduccionController {
         } else {
         	lblEstadoPub.setStyle("-fx-text-fill: green; -fx-font-weight: bold;");
         }
+    }
+    @FXML
+    void regresarMainScreen(ActionEvent event) {
+        NavegacionUtil.cambiarEscena(event, "/fxml/MainView.fxml");
     }
 }

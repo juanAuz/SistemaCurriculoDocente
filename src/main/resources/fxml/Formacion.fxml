@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../estilos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FormacionController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" stylesheets="@../estilos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FormacionController">
    <top>
       <VBox alignment="TOP_CENTER" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -37,6 +37,9 @@
                   </Button>
                   <Label alignment="CENTER" contentDisplay="CENTER" styleClass="titulo" stylesheets="@../estilos.css" text="Formación Académica" />
                </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
             </StackPane>
          </children>
          <padding>

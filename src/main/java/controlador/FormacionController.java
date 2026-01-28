@@ -22,6 +22,7 @@ import modelo.formacion.FormacionSegundoNivel;
 import modelo.formacion.FormacionTercerNivel;
 import modelo.formacion.FormacionCuartoNivel;
 import modelo.enums.TipoPosgrado;
+import util.NavegacionUtil;
 import util.SistemaDocente;
 
 public class FormacionController implements Initializable {
@@ -121,6 +122,7 @@ public class FormacionController implements Initializable {
         cargarCombos();
         configurarSeleccionTablas();
         limpiarLabelsEstado();
+        cargarDatosTablas();
     }
     
     private void inicializarTablas() {
@@ -141,6 +143,24 @@ public class FormacionController implements Initializable {
         colUniversidadCuart.setCellValueFactory(new PropertyValueFactory<>("universidad"));
         colCiudadCuart.setCellValueFactory(new PropertyValueFactory<>("ciudad"));
         colFechaGradoCuart.setCellValueFactory(new PropertyValueFactory<>("fechaObtencion"));
+    }
+    
+    private void cargarDatosTablas() {
+        // Limpiar las tablas primero
+        tbvSegundoNivel.getItems().clear();
+        tbvTercerNivel.getItems().clear();
+        tbvCuartoNivel.getItems().clear();
+        
+        // Filtrar y agregar solo los títulos correspondientes a cada tabla
+        for (Formacion formacion : docente.getTitulos()) {
+            if (formacion instanceof FormacionSegundoNivel) {
+                tbvSegundoNivel.getItems().add((FormacionSegundoNivel) formacion);
+            } else if (formacion instanceof FormacionTercerNivel) {
+                tbvTercerNivel.getItems().add((FormacionTercerNivel) formacion);
+            } else if (formacion instanceof FormacionCuartoNivel) {
+                tbvCuartoNivel.getItems().add((FormacionCuartoNivel) formacion);
+            }
+        }
     }
     
     private void cargarCombos() {
@@ -173,6 +193,7 @@ public class FormacionController implements Initializable {
         });
     }
     
+    // ==================== SEGUNDO NIVEL ====================
     
     @FXML
     void guardarFormacionSeg(ActionEvent event) {
@@ -190,6 +211,7 @@ public class FormacionController implements Initializable {
         
         docente.getTitulos().add(formacion);
         tbvSegundoNivel.getItems().add(formacion);
+        
         limpiarFormularioSeg();
         mostrarExitoSeg();
     }
@@ -226,11 +248,13 @@ public class FormacionController implements Initializable {
         
         docente.getTitulos().remove(formacionSeleccionadaSeg);
         tbvSegundoNivel.getItems().remove(formacionSeleccionadaSeg);
+        
         limpiarFormularioSeg();
         formacionSeleccionadaSeg = null;
         mostrarExitoSeg();
     }
     
+    // ==================== TERCER NIVEL ====================
     
     @FXML
     void guardarFormacionTer(ActionEvent event) {
@@ -248,6 +272,7 @@ public class FormacionController implements Initializable {
         
         docente.getTitulos().add(formacion);
         tbvTercerNivel.getItems().add(formacion);
+        
         limpiarFormularioTer();
         mostrarExitoTer();
     }
@@ -284,11 +309,13 @@ public class FormacionController implements Initializable {
         
         docente.getTitulos().remove(formacionSeleccionadaTer);
         tbvTercerNivel.getItems().remove(formacionSeleccionadaTer);
+        
         limpiarFormularioTer();
         formacionSeleccionadaTer = null;
         mostrarExitoTer();
     }
     
+    // ==================== CUARTO NIVEL ====================
     
     @FXML
     void guardarFormacionCuart(ActionEvent event) {
@@ -307,6 +334,7 @@ public class FormacionController implements Initializable {
         
         docente.getTitulos().add(formacion);
         tbvCuartoNivel.getItems().add(formacion);
+        
         limpiarFormularioCuart();
         mostrarExitoCuart();
     }
@@ -344,12 +372,13 @@ public class FormacionController implements Initializable {
         
         docente.getTitulos().remove(formacionSeleccionadaCuart);
         tbvCuartoNivel.getItems().remove(formacionSeleccionadaCuart);
+        
         limpiarFormularioCuart();
         formacionSeleccionadaCuart = null;
         mostrarExitoCuart();
     }
     
-    // VALIDACIONES 
+    // ==================== VALIDACIONES ====================
     
     private List<String> validarCamposSeg() {
         List<String> errores = new ArrayList<>();
@@ -411,7 +440,7 @@ public class FormacionController implements Initializable {
         return errores;
     }
     
-    // Otros metodos
+    // ==================== MÉTODOS AUXILIARES ====================
     
     private boolean estaVacioTf(TextField tf) {
         return tf.getText() == null || tf.getText().trim().isEmpty();
@@ -425,7 +454,7 @@ public class FormacionController implements Initializable {
         return dp.getValue() == null;
     }
     
-    //  CARGAR DATOS EN FORMULARIOS 
+    // ==================== CARGAR DATOS EN FORMULARIOS ====================
     
     private void cargarDatosFormularioSeg(FormacionSegundoNivel formacion) {
         txtTituloSeg.setText(formacion.getTitulo());
@@ -449,7 +478,7 @@ public class FormacionController implements Initializable {
         dpFechaGradoCuart.setValue(formacion.getFechaObtencion());
     }
     
-    // LIMPIAR FORMULARIOS 
+    // ==================== LIMPIAR FORMULARIOS ====================
     
     private void limpiarFormularioSeg() {
         txtTituloSeg.clear();
@@ -482,7 +511,7 @@ public class FormacionController implements Initializable {
         limpiarLabelEstadoCuart();
     }
     
-    // MOSTRAR MENSAJES 
+    // ==================== MOSTRAR MENSAJES ====================
     
     private void mostrarErrorSeg(List<String> errores) {
         lblEstadoSeg.setText(String.join("\n", errores));
@@ -537,6 +566,6 @@ public class FormacionController implements Initializable {
     
     @FXML
     void regresarMainScreen(ActionEvent event) {
-        // Implementar navegación a pantalla principal
+        NavegacionUtil.cambiarEscena(event, "/fxml/MainView.fxml");
     }
 }

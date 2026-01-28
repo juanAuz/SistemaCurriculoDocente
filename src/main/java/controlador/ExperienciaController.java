@@ -222,7 +222,7 @@ public class ExperienciaController implements Initializable {
     }
     @FXML
     void regresarMainScreen(ActionEvent event) {
-        NavegacionUtil.cambiarEscena(event, "/fxml/MainScreen.fxml");
+        NavegacionUtil.cambiarEscena(event, "/fxml/MainView.fxml");
     }
 }
 

@@ -1,8 +1,10 @@
 package modelo.capacitacion;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class Capacitacion {
+public abstract class Capacitacion implements Serializable{
+    private static final long serialVersionUID = 1L;
     // Atributos protegidos para que las hijas accedan fácilmente
     protected String tema;
     protected String institucion;

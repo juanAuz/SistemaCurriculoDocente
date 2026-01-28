@@ -1,9 +1,9 @@
 package controlador;
 
+import modelo.Docente;
 import modelo.capacitacion.Capacitacion;
 import modelo.capacitacion.CapacitacionImpartida;
 import modelo.capacitacion.CapacitacionRecibida;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,12 +38,16 @@ public class CapacitacionController {
     @FXML private TableColumn<Capacitacion, String> colDetalle; // Muestra Estado o Público
 
     // --- 2. Modelo de Datos (Colección Observable) ---
-    // Aquí aplicamos Polimorfismo: La lista es de 'Capacitacion' pero guarda hijas
-    private ObservableList<Capacitacion> listaCapacitaciones = FXCollections.observableArrayList();
+    private ObservableList<Capacitacion> listaCapacitaciones;
+    private Docente docente;
 
     // --- 3. Inicialización (Se ejecuta al abrir la ventana) ---
     @FXML
     public void initialize() {
+        // OBTENER LA LISTA DEL DOCENTE
+        docente = SistemaDocente.getInstancia().getDocente();
+        listaCapacitaciones = docente.getCapacitaciones();
+        
         // Configurar el ComboBox
         cmbTipo.getItems().addAll("Recibida", "Impartida");
         
@@ -88,7 +92,7 @@ public class CapacitacionController {
             LocalDate inicio = dpInicio.getValue();
             LocalDate fin = dpFin.getValue();
             
-            // Validación básica [cite: 78]
+            // Validación básica
             if (tema.isEmpty() || institucion.isEmpty() || inicio == null || fin == null || txtHoras.getText().isEmpty()) {
                 mostrarAlerta("Error", "Por favor llene todos los campos obligatorios.");
                 return;
@@ -113,7 +117,7 @@ public class CapacitacionController {
                 nuevaCapacitacion = new CapacitacionImpartida(tema, institucion, inicio, fin, horas, publico);
             }
 
-            // C. Agregar a la lista (La tabla se actualiza sola)
+            // C. Agregar a la lista (La tabla se actualiza sola porque está enlazada)
             listaCapacitaciones.add(nuevaCapacitacion);
             
             // D. Limpiar formulario
@@ -144,8 +148,9 @@ public class CapacitacionController {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+    
     @FXML
     void regresarMainScreen(ActionEvent event) {
-        NavegacionUtil.cambiarEscena(event, "/fxml/MainScreen.fxml");
+        NavegacionUtil.cambiarEscena(event, "/fxml/MainView.fxml");
     }
 }

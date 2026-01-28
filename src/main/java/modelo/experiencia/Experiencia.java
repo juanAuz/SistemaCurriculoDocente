@@ -1,8 +1,10 @@
 package modelo.experiencia;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class Experiencia {
+public abstract class Experiencia implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String institucion;
 	private LocalDate fechaDesde;
 	private LocalDate fechaHasta;

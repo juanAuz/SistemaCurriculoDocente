@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../estilos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.CapacitacionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" stylesheets="@../estilos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.CapacitacionController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="6.0" prefHeight="0.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -31,7 +31,7 @@
                         <Insets top="10.0" />
                      </padding>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#regresarMainScreen" styleClass="boton-primario" text="Volver" StackPane.alignment="CENTER_LEFT">
+                  <Button mnemonicParsing="false" onAction="#regresarMainScreen" styleClass="boton-primario" text="Regresar" StackPane.alignment="CENTER_LEFT">
                      <StackPane.margin>
                         <Insets left="10.0" />
                      </StackPane.margin>
