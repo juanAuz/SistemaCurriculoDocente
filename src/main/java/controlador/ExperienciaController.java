@@ -1,7 +1,6 @@
 package controlador;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.beans.property.SimpleStringProperty;
